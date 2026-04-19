@@ -9,9 +9,19 @@ class PrinterI(Demo.Printer):
         print(self.t, s)
         return s + "*"
 
+    def printUpperCase(self, s, current=None):
+        result = s.upper()
+        print(self.t, result)
+        return result
+
+    def countWords(self, s, current=None):
+        count = len(s.split())
+        print(self.t, f"Word count of '{s}': {count}")
+        return count
+
 communicator = Ice.initialize(sys.argv) 
 
-adapter = communicator.createObjectAdapterWithEndpoints("SimpleAdapter", "default -p 11000")
+adapter = communicator.createObjectAdapterWithEndpoints("SimpleAdapter", "default -p 5678")
 object1 = PrinterI("Object1 says:")
 object2 = PrinterI("Object2 says:")
 adapter.add(object1, communicator.stringToIdentity("SimplePrinter1"))
