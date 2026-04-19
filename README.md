@@ -5,3 +5,9 @@ sudo dnf install python3-ice ice-compilers
 ```
 
 Note: This code is exactly as in Example 3.21 of Maarten van Steen's book.
+
+Foram adicionados os métodos no Printer.ice
+```
+        string printUpperCase(string s);
+        int countWords(string s);
+```
